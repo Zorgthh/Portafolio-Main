@@ -60,9 +60,9 @@ function Portfolio() {
         Proyectos destacados
       </motion.h2>
 
-      <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+      <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <motion.div 
-          className="flex items-stretch p-4 gap-3"
+          className="flex items-stretch p-4 gap-3 flex-wrap justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 1 }}
@@ -70,7 +70,7 @@ function Portfolio() {
           {['UserCrud', 'Rick and Morty App', 'Weather App'].map((project, index) => (
             <motion.div 
               key={index} 
-              className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60"
+              className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-[200px] sm:min-w-[250px]"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -225,3 +225,4 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
