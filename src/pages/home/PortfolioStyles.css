@@ -1,31 +1,84 @@
+/* Establecer fuente predeterminada */
 .design-root {
-    font-family: 'Jost', sans-serif;;
-  }
-  
-  .background-image {
-    background-image: url("./img/programming-and-coding-concept-vector.webp");
-  }
-  
+  font-family: 'Jost', sans-serif;
+}
+
+/* Imagen de fondo general */
+.background-image {
+  background-image: url("./img/programming-and-coding-concept-vector.webp");
+  background-size: cover;  /* Asegura que la imagen cubra toda el área */
+  background-position: center;
+}
+
+/* Hero Section (con gradiente de fondo y imagen) */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), 
+    url("./img/No me puedo rendir.png");
+  background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+  background-position: center;
+  border-radius: 20px;
+  width: 100%; /* Se ajusta al 100% del contenedor */
+  max-width: 1300px; /* Máxima anchura para pantallas grandes */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para las imágenes de los proyectos */
+.project-image-1, .project-image-2, .project-image-3 {
+  background-size: cover; /* Asegura que las imágenes cubran el área */
+  background-position: center;
+  border-radius: 10px;
+  height: 300px; /* Altura fija para las imágenes */
+}
+
+/* Cada imagen de proyecto con su URL específica */
+.project-image-1 {
+  background-image: url("./img/{F5F663CF-BCA0-4E56-83E5-662A6E3896AB}.png");
+}
+
+.project-image-2 {
+  background-image: url("./img/{44E6E2D2-24E0-4AFF-A495-A9C13AF08F98}.png");
+}
+
+.project-image-3 {
+  background-image: url("./img/{54FF059A-9C07-4202-9797-5B2E2E97D92C}.png");
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 1024px) {
   .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), 
-      url("./img/No me puedo rendir.png");
-    border-radius: 20px;
-    width: 1300px;
-    align-items: center;
-    margin: 0 auto;
-    
+    width: 100%;
+    padding: 10px;
   }
-  
-  
-  .project-image-1 {
-    background-image: url("./img/{F5F663CF-BCA0-4E56-83E5-662A6E3896AB}.png");
+
+  .project-image-1, .project-image-2, .project-image-3 {
+    height: 250px;
   }
-  
-  .project-image-2 {
-    background-image: url("./img/{44E6E2D2-24E0-4AFF-A495-A9C13AF08F98}.png");
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 8px;
+    border-radius: 15px;
   }
-  
-  .project-image-3 {
-    background-image: url("./img/{54FF059A-9C07-4202-9797-5B2E2E97D92C}.png");
+
+  .project-image-1, .project-image-2, .project-image-3 {
+    height: 200px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .project-image-1, .project-image-2, .project-image-3 {
+    height: 180px;
+  }
+}
+
