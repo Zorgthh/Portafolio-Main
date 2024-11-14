@@ -25,7 +25,7 @@ function Portfolio() {
           </h2>
         </div>
       </motion.div>
-      
+
       <div className="@container">
         <motion.div 
           className="@[480px]:p-4"
@@ -52,7 +52,7 @@ function Portfolio() {
       </div>
 
       <motion.h2 
-        className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+        className="text-[#111418] text-[22px] text-center font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
@@ -60,34 +60,36 @@ function Portfolio() {
         Proyectos destacados
       </motion.h2>
 
-      <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <motion.div 
-          className="flex items-stretch p-4 gap-3 flex-wrap justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 1 }}
-        >
-          {['UserCrud', 'Rick and Morty App', 'Weather App'].map((project, index) => (
-            <motion.div 
-              key={index} 
-              className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-[200px] sm:min-w-[250px]"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={`w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col project-image-${index + 1}`}></div>
-              <div>
-                <p className="text-[#111418] text-base font-medium leading-normal">
-                  <a href="https://project-link.com" target="_blank" rel="noopener noreferrer">{project}</a>
-                </p>
-                <p className="text-[#637588] text-sm font-normal leading-normal">Descripción breve del proyecto {project.toLowerCase()}.</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      <motion.div
+        className="projects-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 1 }}
+      >
+        {['UserCrud', 'Rick and Morty App', 'Weather App'].map((project, index) => (
+          <motion.div
+            key={index}
+            className="project-item"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div
+              className={`project-image project-image-${index + 1}`}
+            ></div>
+            <div className="project-details">
+              <p className="project-title">
+                <a href="https://project-link.com" target="_blank" rel="noopener noreferrer">{project}</a>
+              </p>
+              <p className="project-description">
+                Descripción breve del proyecto {project.toLowerCase()}.
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
       <motion.h2 
-        className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+        className="text-[#111418] text-[22px] text-center font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
@@ -124,7 +126,7 @@ function Portfolio() {
 
       {/* Sección Contáctame */}
       <motion.div
-        className="contact-section bg-[#f4f6f9] py-10"
+        className="contact-section bg-white] py-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
@@ -207,22 +209,20 @@ function Portfolio() {
 
       <footer className="bg-[#111418] text-white py-6">
         <div className="text-center">
-          <p className="text-sm">
-            &copy; 2024 Jhon | Todo se aprende.
-          </p>
-          <div className="mt-4 flex justify-center gap-8"> 
-            <a href="https://www.linkedin.com/in/jhon-jairo-diaz-juris-9288ba247" target='_blank' className="text-white flex items-center hover:text-[#f4f6f9]">
-              <FaLinkedin size={24} className="mr-2" /> LinkedIn
-            </a>
-            <a href="https://github.com/Zorgthh" target='_blank' className="text-white flex items-center hover:text-[#f4f6f9]">
-              <FaGithub size={24} className="mr-2" /> GitHub
-            </a>
-          </div>
+          <motion.a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-xl mx-4">
+            <FaLinkedin />
+          </motion.a>
+          <motion.a href="https://github.com/Zorgthh" target="_blank" rel="noopener noreferrer" className="text-xl mx-4">
+            <FaGithub />
+          </motion.a>
         </div>
+        <p className="text-sm mt-4">&copy; 2024 Jhon Diaz. Todo se aprende.</p>
       </footer>
     </div>
   );
 }
 
 export default Portfolio;
+
+
 
